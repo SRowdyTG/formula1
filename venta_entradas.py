@@ -1,12 +1,16 @@
+
 listaDeClientes = []
 
-def cliente():
+class cliente():
     def __init__(self, name, clientID, age, race, ticketType):
         self.name = name
         self.clientID = clientID
         self.age = age
         self.race = race 
         self.ticketType = ticketType 
+    
+    def __str__(self):
+        return "Nombre: {}\nCédula: {}\nEdad: {}\nCarrera: {}\nTipo de Entrada: {}\n".format(self.name, self.clientID, self.age, self.race, self.ticketType)
         
 def mostrar_clientes():
     print("\nLISTA DE CLIENTES\n")
@@ -20,7 +24,7 @@ def esOndulante(clientID):
             return False 
     return True
 
-def agregar_cliente(cliente):
+def agregar_cliente():
     nameinput = ""
     clientIDinput = ""
     ageinput = ""
