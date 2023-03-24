@@ -14,7 +14,8 @@ class cliente():
         
 def mostrar_clientes():
     print("\nLISTA DE CLIENTES\n")
-    print(listaDeClientes)
+    for c in listaDeClientes:
+        print(c)
 
 def esOndulante(clientID):
     if (len(clientID) <= 2):
@@ -58,6 +59,7 @@ def agregar_cliente():
     nuevoCliente = cliente(nameinput, clientIDinput, ageinput, raceinput, ticketTypeinput)
     listaDeClientes.append(nuevoCliente)
 
+archivoclientes = open(write)
 
 agregar_cliente()
 mostrar_clientes()

@@ -1,7 +1,9 @@
-class carreras():
-    def __init__(self, round, name, circuit):
-        self.round = round
-        self.name = name
-        self.circuit = circuit
+from circuitos import *
 
+class carreras():
+    def __init__(self, round, raceName, circuit):
+        self.round = round
+        self.raceName = raceName
+        self.circuit = circuit
+        
 
