@@ -2,7 +2,7 @@ from drivers import *
 from constructors import *
 from races import *
 from circuits import * 
-
+from sales import *
 import sys
 import time
 import random
@@ -78,9 +78,11 @@ def mainmenu():
             print("Opción 1: Buscar y filtrar información de carreras")
             searchmenu()
         elif user_input == 2:
-            print("Opción 2")
+            print("Opción 2: Finalizar carreras y crear podios de ganadores")
+            racemenu()
         elif user_input == 3:
-            print("Opción 3")
+            print("Opción 3: Registrar compra de entradas/registro de cliente")
+            sales_menu()
         elif user_input == 4:
             print("Opción 4")
         elif user_input == 5:
@@ -92,7 +94,7 @@ def mainmenu():
             sys.exit()
 def searchmenu():
     while True:
-        s_menu_options = [1, 2, 3, 4, 5, 6]
+        s_menu_options = [1, 2, 3, 4, 5]
         s_user_input = 0
         print("\n*MENÚ DE BÚSQUEDAS*")
         print("Opciones")
@@ -126,7 +128,41 @@ def searchmenu():
             print("Volviendo al menú anterior...")
             time.sleep(2)
             break
-        
+def sales_menu():
+    while True:
+            c_menu_options = [1, 2, 3, 4]
+            c_user_input = 0
+            print("\n*MENÚ DE ENTRADAS*")
+            print("Opciones")
+            print("[1]Registrar la compra de una entrada/nuevo cliente")
+            print("[2]Mostrar lista de clientes")
+            print("[3]Guardar lista de clientes a archivo")
+            print("[4]Volver al menú principal")
+
+            while c_user_input not in c_menu_options:
+                c_user_input = input("Introduzca una opción:\n")
+                try:
+                    c_user_input = int(c_user_input)
+                    break
+                except ValueError:
+                    print("Inválido: Necesitas introducir un número correspondiente a una opción.")
+
+            if c_user_input == 1:
+                print("Opción 1:Registrar la compra de una entrada/nuevo cliente")
+                add_clients()
+            elif c_user_input == 2:
+                print("Opción 2:Mostrar lista de clientes")
+                show_clients()
+            elif c_user_input == 3:
+                print("Opción 3:Guardar lista de clientes a archivo")
+                save_clients()
+            elif c_user_input == 4:
+                print("Volviendo al menú anterior...")
+                time.sleep(2)
+                break        
+def racemenu():
+    print()
+    
 main()
 
 

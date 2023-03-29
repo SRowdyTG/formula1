@@ -16,7 +16,8 @@ class race:
             "Name:" : self.raceName,
             "Circuit:" : self.raceCircuit,
             "Date:" : self.raceDate,
-            "Restaurants:" : self.raceRestaurants
+            "Restaurants:" : self.raceRestaurants,
+            "Map" : self.raceMap
             }
     #String method
     def __str__(self):
