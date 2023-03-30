@@ -2,6 +2,7 @@ import json
 import requests
 #importing
 class driver:
+    '''Definición de la clase driver()'''
     #Attributes
     def __init__(self, driverID, permanentNumber, code, team, firstName, lastName, dateOfBirth, nationality):
         self.driverID = driverID
@@ -15,6 +16,7 @@ class driver:
         self.nationality = nationality
     #Dictionary method
     def __dict__(self):
+        '''Método de expresión en forma de diccionario'''
         return {
             "ID:" : self.driverID,
             "Permanent Number:" : self.permanentNumber,
@@ -27,9 +29,11 @@ class driver:
             }
     #String method
     def __str__(self):
+        '''Método de expresión en forma de cadena'''
         return "{\n"f"ID: {self.driverID}\nPermanent Number: {self.permanentNumber}\nCode: {self.code}\nTeam: {self.team}\nFirst Name: {self.firstName}\nLast Name: {self.lastName}\nDOB: {self.dateOfBirth}\nNationality: {self.nationality}\n""}\n"
     #List method
     def __repr__(self):
+        '''Método de expresión para lista'''
         return "{\n"f"ID: {self.driverID}\nPermanent Number: {self.permanentNumber}\nCode: {self.code}\nTeam: {self.team}\nFirst Name: {self.firstName}\nLast Name: {self.lastName}\nDOB: {self.dateOfBirth}\nNationality: {self.nationality},\n""}\n"
 #Driver class definition
 
@@ -41,6 +45,7 @@ downloaded_list_drivers = retrieval.json()
 #Request
 
 def assign_and_save_driverdata():
+    '''Construye un nuevo objeto de la clase driver() a partir de la información de cada elemento de la lista descargada por API en retrieval.json() y guarda la lista de objetos de la clase driver() en memoria a un archivo de texto'''
     newDriverID = ""
     newDriverNumber = ""
     newDriverCode = ""

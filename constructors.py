@@ -1,6 +1,7 @@
 from drivers import *
 #importing
 class constructor:
+    '''Definición de la clase constructor()'''
     def __init__(self,  cID, cName, cNationality, cDrivers):
         self.cID = cID
         self.cName = cName
@@ -8,12 +9,13 @@ class constructor:
         self.cDrivers = cDrivers
 
     def add_drivers(self, driver_list):
+        '''Añade pilotos correspondientes a cada objeto de la clase constructor()'''
         for element in driver_list:
             if element.team.replace(" ", "").lower() == self.cID.replace(" ", "").lower():
-                self.cDrivers.append(element.driverID)         
-#run through the driver list and if the team attribute matches the name attribute in the a constructor, add it to that constructor's drivers attribute(which is a list)
-#how to compare the attribute on the unnamed objects in driver_list with the also unnamed objects in constructor_list?
+                self.cDrivers.append(element.driverID)
+
     def dict(self):
+        '''Método de expresión en forma de diccionario'''
         return {
             "ID" : self.cID,
             "Name" : self.cName,
@@ -22,11 +24,13 @@ class constructor:
         }
     
     def __str__(self):
+        '''Método de expresión en forma de cadena'''
         return "{\n"f"ID: {self.cID}\nName: {self.cName}\nNationality: {self.cNationality}\nDrivers: {self.cDrivers}\n""},\n"
-    #List method
+
     def __repr__(self):
+        '''Método de expresión para lista'''
         return "{\n"f"ID: {self.cID}\nName: {self.cName}\nNationality: {self.cNationality}\nDrivers: {self.cDrivers}\n""},\n"
-#constructor class definition
+
 cretrieval = requests.get("https://raw.githubusercontent.com/Algorimtos-y-Programacion-2223-2/api-proyecto/f8e2b420a8f9f5a27463eb29e1df63605822be13/constructors.json")
 print(cretrieval.status_code)
 downloaded_list_constructors = cretrieval.json()
@@ -34,6 +38,7 @@ downloaded_list_constructors = cretrieval.json()
 constructor_list = []
 #list definition
 def assign_constructordata():
+    '''Construye un nuevo objeto de la clase constructor() a partir de la información de cada elemento de la lista descargada por API en cretrieval.json()'''
     newConstructorID = ""
     newConstructorName = ""
     newConstructorNationality = ""
@@ -49,6 +54,7 @@ def assign_constructordata():
     #Convert requested data to objects and add to list
 #Convert downloaded list of elements to objects and append to list
 def save_constructordata():
+    '''Guarda la lista de objetos de la clase constructor() en memoria a un archivo de texto'''
     save_constructors_tofile = open("constructors.txt", "w")
     save_constructors_tofile.write("[")
     for e in constructor_list:
