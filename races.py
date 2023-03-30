@@ -146,10 +146,12 @@ def finish_race(selected_race):
         print("Resultados de la carrera", selected_race)
         return winners
 
-def finish_season(races_results):
+'''def finish_season(races_results):
+    #Desarrolla una lista de resultados basados en 10 carreras para una temporada
     from main import races_results
     while True:
-        s_user_input
+        for w in races_results:
+            w'''
 
 assign_racedata()
 save_racedata()

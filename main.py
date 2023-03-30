@@ -1,7 +1,6 @@
 from drivers import *
 from constructors import *
 from races import *
-from circuits import * 
 from sales import *
 import sys
 import time
@@ -207,18 +206,19 @@ def racemenu():
             print("Opción 1: Finalizar una carrera")
             select_race()
             finish_race()
-        elif r_user_input == 2:
-            print("Opción 2: Finalizar una temporada")
-            for x in range(10):
-                races_results = []
-                select_race()
-                finish_race()
-                races_results.append(finish_race())
-            finish_season()
         elif r_user_input == 3:
             print("Volviendo al menú anterior...")
             time.sleep(2)
             break  
+        '''elif r_user_input == 2:
+            print("Opción 2: Finalizar una temporada")
+            races_results = []
+            for x in range(10):
+                select_race()
+                finish_race()
+                print("Carrera Número: ", x)
+                races_results.append(finish_race())
+            #finish_season()'''
 main()
 
 

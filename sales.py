@@ -137,3 +137,21 @@ def uniqueIDvalidation(verif_UniqueID):
     elif verif_UniqueID not in uniqueID_list:
                 print("\n***CÓDIGO ÚNICO INVÁLIDO. CÓDIGO NO EXISTENTE EN BASE DE DATOS, POR FAVOR INTENTE DE NUEVO***")       
 
+def get_restaurant_order():
+    '''Registra la compra de productos en restaurante de un cliente VIP'''
+    while True:
+        while verif_UniqueID == None:
+            verif_UniqueID = input("Por favor introduzca su código único de validación:\nIntroduzca 'x' para cancelar.\n")
+            if verif_UniqueID != "x":
+                uniqueIDvalidation(verif_UniqueID)
+            elif verif_UniqueID == "x":
+                print("Cancelado. Volviendo al menú anterior...")
+                break
+            for c in client_list:
+                if verif_UniqueID == c.uniqueID:
+                    buyer = c
+                else:
+                    print("No client found.")
+                    break
+        if uniqueIDvalidation(verif_UniqueID) and esOndulante(buyer.clientID):
+            print("Puede proceder a comprar productos en restaurantes. Seleccione una carrera:")
